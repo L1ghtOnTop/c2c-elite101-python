@@ -1,27 +1,31 @@
-
-"""
-    Welcome to Elite 101 this program is a starter for your chatbot project.
-    The starter prompts the user to enter their name and then greets them with a personalized message.
-
-    Functions:
-        get_user_name(): Prompts the user to enter their name and returns it.
-        greet_user(name): Prints a greeting message using the provided name.
-        main(): Main function that orchestrates the user input and greeting process.
-
-    Execution:
-        When the script is run directly (not imported as a module), it will execute the main() function.
-"""
-
-
 def get_user_name():
-    return input("Please enter your name: ")
+    return input('What is your name? ')
 
-def greet_user(name):
-    print(f"Hello, {name}!")
+def ask_question():
+    return input('How are you feeling today? ')
+
+def chatbot_response(response):
+    if 'good' in response.lower() or 'great' in response.lower():
+        print('I\'m glad to hear that!')
+    elif 'down' in response.lower() or 'bad' in response.lower():
+        print('I\'m sorry to hear that. I hope your day gets better.')
+    else:
+        print('Thanks for sharing.')
+
+def favorite_color():
+    return input('What is your favorite color? ')
 
 def main():
+    print('Welcome to Elite 101!')
     user_name = get_user_name()
-    greet_user(user_name)
+    print('Nice to meet you, ' + user_name + '!')
 
-if __name__ == "__main__":
-    main()
+    user_response = ask_question()
+    chatbot_response(user_response)
+
+    color = favorite_color()
+    print('Wow, ' + color + ' is a great choice!')
+
+    print('Thanks for chatting with me, ' + user_name + '.')
+
+main()
