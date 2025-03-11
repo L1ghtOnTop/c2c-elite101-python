@@ -14,7 +14,7 @@ def chatbot_response(response):
 
 def favorite_color():
     return input('What is your favorite color? ')
-
+# make sure to implement a loop so the conversation doesn't restart or end until the user exits
 def offer_help():
     print("\nI can help with:")
     print("1. Share a fun fact")
